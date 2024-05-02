@@ -1,21 +1,8 @@
-#!/bin/bash
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <input_directory> <output_directory>"
-    exit 1
-fi
-input_dir="$1"
-output_dir="$2"
-if [ ! -d "$input_dir" ]; then
-    echo "Input directory $input_dir does not exist."
-    exit 1
-fi
-mkdir -p "$output_dir"
-files=$(find "$input_dir" -type f)
-for file in $files; do
-    filename=$(basename "$file")
-    if [ -f "$output_dir/$filename" ]; then
-        filename=$(basename "$(dirname "$file")")"_$filename"
-    fi
-    cp "$file" "$output_dir/$filename"
-done
-echo "Files copied successfully from $input_dir to $output_dir."
+# Данный скрипт позволяет нам копировать файлы из одной директории в другую
+## использование программы 
+1)скачиваем файл tz1.sh и переносим его в папку, внутри которой мы хотим из одной директории перенести файлы в другую
+2)далее в терминале прописываем команду bash, потом указываем путь в нашу главную папку
+3)чтобы перенести файлы из одной директории в другую, мы прописываем команду sh tz1.sh <дериктория входа> <дериктория выхода>
+4)наблюдаем результат :)
+
+Шейкин Александр Евгеньевич, группа 232, тг: @ssnncchh
